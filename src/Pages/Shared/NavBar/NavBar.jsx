@@ -28,7 +28,8 @@ const NavBar = () => {
     const navOptions = <>
         <Link to="/"><img className="w-16 rounded-full mx-auto" src={logo} alt="" /></Link>
         <li><Link className="text-2xl btn mx-10" to="/">Home</Link></li>
-        <li><Link className="text-2xl btn mr-10" to="/details">Details</Link></li>
+        <li><Link className="text-2xl btn mr-10" to="/about">About</Link></li>
+        <li><Link className="text-2xl btn mr-10" to="/signup">Register</Link></li>
         {/* {
             user ? <>
                 <li><Link className="text-2xl btn" to="/dashboard">Dashboard</Link></li>
