@@ -4,6 +4,7 @@ import useAxios from "../../hooks/useAxios";
 import useAuth from "../../hooks/useAuth";
 
 
+
 const SocialLogin = () => {
     const { googleSignIn } = useAuth();
     const axiosPublic = useAxios();
@@ -16,8 +17,7 @@ const SocialLogin = () => {
             const userInfo = {
                 email: result.user?.email,
                 name: result.user?.displayName,
-                photo: result.user?.photoURL,
-                role: ""
+                photo: result.user?.photoURL
 
             }
             axiosPublic.post('/users', userInfo)
