@@ -2,26 +2,27 @@
 import { Link } from "react-router-dom";
 import logo from "../../../../src/assets/Home/logo.jpg"
 
-// import useAuth from "../../../hooks/useAuth";
-// import { useState } from "react";
-// import useMembers from "../../../hooks/useMembers";
+import { useState } from "react";
+import useMembers from "../../../hooks/useMembers";
+import useAuth from "../../../hooks/useAuth";
+
 
 const NavBar = () => {
-    // const { user, logOut } = useAuth();
-    // const [users] = useMembers();
-    // const [isMenuOpen, setMenuOpen] = useState(false);
+    const { user, logOut } = useAuth();
+    const [users] = useMembers();
+    const [isMenuOpen, setMenuOpen] = useState(false);
 
-    // const currentUser = users?.filter(person => person?.email === user?.email);
+    const currentUser = users?.filter(person => person?.email === user?.email);
 
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then(() => { })
-    //         .catch(error => console.log(error));
-    // }
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
 
-    // const toggleMenu = () => {
-    //     setMenuOpen(!isMenuOpen);
-    // }
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
+    }
 
 
 
@@ -30,7 +31,7 @@ const NavBar = () => {
         <li><Link className="text-2xl btn mx-10" to="/">Home</Link></li>
         <li><Link className="text-2xl btn mr-10" to="/about">About</Link></li>
         <li><Link className="text-2xl btn mr-10" to="/signup">Register</Link></li>
-        {/* {
+        {
             user ? <>
                 <li><Link className="text-2xl btn" to="/dashboard">Dashboard</Link></li>
                 <div className="ml-14">
@@ -41,10 +42,6 @@ const NavBar = () => {
                                 <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                     
                                     <li className="text-black text-xl">Name: {currentUser[0]?.name}</li>
-                                    <li className="text-blue-500 text-xl"><Link className="text-4xl btn" to="/dashboard/userProfile">Profile</Link></li>
-                    
-
-                                    <button onClick={handleLogOut} className="text-2xl btn ml-16 text-red-400">LogOut</button>
                                 </div>
                             </div>
                         )
@@ -55,7 +52,7 @@ const NavBar = () => {
                 <Link className="btn" to="/login">Login</Link>
 
             </>
-        } */}
+        }
     </>
 
     return (
