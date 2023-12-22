@@ -23,7 +23,7 @@ const TaskForm = () => {
         const newTask = { email, title, description, priority, date };
         console.log(newTask);
 
-        fetch("http://localhost:5000/createTask", {
+        fetch("https://task-management-server-seven-blond.vercel.app/createTask", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -11,7 +11,7 @@ const ManageTask = () => {
 
     const handleDelete = event => {
 
-        fetch(`http://localhost:5000/task/${event._id}`, {
+        fetch(`https://task-management-server-seven-blond.vercel.app/task/${event._id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

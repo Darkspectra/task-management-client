@@ -32,7 +32,7 @@ const NavBar = () => {
         <li><Link className="text-2xl btn mr-10" to="/about">About</Link></li>
         {
             user ? <>
-                <li><Link className="text-2xl btn" to="/dashboard">Dashboard</Link></li>
+                <li><Link className="text-2xl btn" to="/dashboard/userProfile">Dashboard</Link></li>
                 <div className="ml-14">
                     <img onClick={toggleMenu} className="w-16 rounded-full mx-auto" src={currentUser[0]?.photo} alt="" />
                     {
