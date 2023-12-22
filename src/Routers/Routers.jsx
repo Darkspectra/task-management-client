@@ -9,6 +9,8 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import TaskForm from "../Pages/TaskForm/TaskForm";
+import ManageTask from "../Pages/ManageTask/ManageTask";
+import About from "../Pages/About/About";
 
 
 export const router = createBrowserRouter([
@@ -27,7 +29,11 @@ export const router = createBrowserRouter([
             {
                 path: "login",
                 element: <Login></Login>
-            }
+            },
+            {
+                path: "about",
+                element: <About></About>
+            },
         ]
     },
     {
@@ -41,6 +47,10 @@ export const router = createBrowserRouter([
           {
             path: 'createTask',
             element: <PrivateRoute><TaskForm></TaskForm></PrivateRoute>
+          },
+          {
+            path: 'manageTask',
+            element: <PrivateRoute><ManageTask></ManageTask></PrivateRoute>
           }
 ]
 }
